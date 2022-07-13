@@ -9,7 +9,7 @@ class ClienteViewset(viewsets.ModelViewSet):
 
     serializer_class = ClienteSerializer
     queryset = Cliente.objects.all()
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     filter_backends = [
         DjangoFilterBackend,

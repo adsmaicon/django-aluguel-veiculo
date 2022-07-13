@@ -14,15 +14,15 @@ class ClienteSerializer(serializers.HyperlinkedModelSerializer):
         model = Cliente
         fields = "__all__"
 
-    def validate(self, data):
-        if (data.get("tipo") == 'PJ') and (data.get("cnpj") == None):
-            raise serializers.ValidationError(
-                {'Tipo': 'Se tipo igual a PJ o cnpj é obrigatorio'})
-        elif (data.get("tipo") == 'PF') and (data.get("cpf") == None):
-            raise serializers.ValidationError(
-                'Se tipo igual a PF o cpf é obrigatorio')
+    # def validate(self, data):
+    #     if (data.get("tipo") == 'PJ') and (data.get("cnpj") == None):
+    #         raise serializers.ValidationError(
+    #             {'Tipo': 'Se tipo igual a PJ o cnpj é obrigatorio'})
+    #     elif (data.get("tipo") == 'PF') and (data.get("cpf") == None):
+    #         raise serializers.ValidationError(
+    #             'Se tipo igual a PF o cpf é obrigatorio')
 
-        return data
+    #     return data
 
     def validate_tipo(self, tipo):
         return tipo
